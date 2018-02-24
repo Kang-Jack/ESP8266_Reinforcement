@@ -2,13 +2,13 @@ A fundamental project structure for ESP 8266 projects :
 the project is based on https://www.john-lassen.de/en/projects/esp-8266-arduino-ide-webconfig
 built up a configure web page, in addition the following features have been implemented: 
 
-1.mqtt ( maqtt config page, mqtt client handle  )
+1.MQTT supports ( maqtt config page, mqtt client handle  )
 
-2.use SPIFFS to replace EPPROM
+2.Use SPIFFS to replace EPPROM
 
 3.OTA supports
 
-4.A mqtt test (example)
+4.A MQTT test (example)
 
 5.Some code refatoring
 
