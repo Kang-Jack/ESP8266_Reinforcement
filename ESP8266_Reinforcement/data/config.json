@@ -1,0 +1,45 @@
+{
+  "ssid": "YOURWIFISSID",
+  "password": "YOUR PASSWORD",
+  "dhcp": true,
+  "IP": [
+    192,
+    168,
+    XXX,
+    XXX
+  ],
+  "MqttIP": [
+    192,
+    168,
+    XXX,
+    XXX
+  ],
+  "MqttPort": XXXX,
+  "Netmask": [
+    255,
+    255,
+    255,
+    0
+  ],
+  "Gateway": [
+    192,
+    168,
+    XXX,
+    XXX
+  ],
+  "ntpServerName": "0.de.pool.ntp.org",
+  "Update_Time_Via_NTP_Every": 0,
+  "timezone": -10,
+  "daylight": 0,
+  "DeviceName": "ESP12",
+  "AutoTurnOff": 0,
+  "AutoTurnOn": 0,
+  "TurnOffHour": 0,
+  "TurnOffMinute": 0,
+  "TurnOnHour": 0,
+  "TurnOnMinute": 0,
+  "ota": false,
+  "mqtt_topic": "/ESP12",
+  "mqtt_subtopic": "/answer/data",
+  "mqtt_sub": "/home/ESP12/command"
+}
