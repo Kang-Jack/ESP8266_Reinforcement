@@ -1,14 +1,22 @@
-ESP01/s (ESP8266) has embedded WIFI add faster processor  which can connect with an Arduino board to get more sensor extensibility.
+A fundamental project structure for ESP 8266 projects :
+the project is based on https://www.john-lassen.de/en/projects/esp-8266-arduino-ide-webconfig
+built up a configure web page, in addition the following features have been implemented: 
 
-However , there are  two common problem  
-1. The ESP01/s has a powerful process and bigger memory,it is a waste to only use its wifi part.  
-2. Some of Arduino  only contains one serial port for usb connection. so only soft serial can be used to connect with ESP8266. In this case since the Arduino perform the loop much faster than soft serial communication speed, lots of MQTT message will be lost and we have to use delay in the loop to wait for MQTT message. 
+1.mqtt ( maqtt config page, mqtt client handle  )
 
-the library will make ESP01/s as independent MQTT node. it make ESP01/s take responsibility to comul
+2.use SPIFFS to replace EPPROM
 
+3.OTA supports
 
+4.A mqtt test (example)
 
+5.Some code refatoring
 
-d
 reference 
 https://www.john-lassen.de/en/projects/esp-8266-arduino-ide-webconfig
+
+Know issues:
+
+1.The project cannot compile on Arduino IDE Mac version . 
+  Despite the poject can be compiled and uploaded successfully on Mac OS, it will crashed on run time. The same code on windows Arduino IDE
+ works perfectly. Should be a internal bug in ESP8266 arduino lib.
