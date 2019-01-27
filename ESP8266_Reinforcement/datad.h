@@ -25,7 +25,6 @@ struct strConfig {
     byte TurnOffMinute;
     byte TurnOnHour;
     byte TurnOnMinute;
-
     boolean ota;
     String mqtt_topic;
     String mqtt_subtopic;

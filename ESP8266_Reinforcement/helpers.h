@@ -81,8 +81,6 @@ void ConvertUnixTimeStamp(unsigned long TimeStamp, struct strDateTime* DateTime)
     DateTime->month = month + 1;  // jan is month 1  
     DateTime->day = time + 1;     // day of month
     DateTime->year += 1970;
-
-
 }
 
 String GetMacAddress(){
