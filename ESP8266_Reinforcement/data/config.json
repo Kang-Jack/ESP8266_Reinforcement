@@ -1,6 +1,6 @@
 {
-  "ssid": "YOURWIFISSID",
-  "password": "YOUR PASSWORD",
+  "ssid": "SSID",
+  "password": "PASSWORD",
   "dhcp": true,
   "IP": [
     192,
@@ -14,7 +14,7 @@
     XXX,
     XXX
   ],
-  "MqttPort": XXXX,
+  "MqttPort": 1883,
   "Netmask": [
     255,
     255,
@@ -29,9 +29,9 @@
   ],
   "ntpServerName": "0.de.pool.ntp.org",
   "Update_Time_Via_NTP_Every": 0,
-  "timezone": -10,
+  "timezone": 8,
   "daylight": 0,
-  "DeviceName": "ESP12",
+  "DeviceName": "ESPMega",
   "AutoTurnOff": 0,
   "AutoTurnOn": 0,
   "TurnOffHour": 0,
@@ -39,7 +39,10 @@
   "TurnOnHour": 0,
   "TurnOnMinute": 0,
   "ota": false,
-  "mqtt_topic": "/ESP12",
-  "mqtt_subtopic": "/answer/data",
-  "mqtt_sub": "/home/ESP12/command"
+  "mqtt_topic": "esp/answer",
+  "mqtt_subtopic": "/data",
+  "mqtt_sub": "home/command/esp12s/mega",
+  "mqtt_server_domain": "local",
+  "mqtt_user": "",
+  "mqtt_password": ""
 }
