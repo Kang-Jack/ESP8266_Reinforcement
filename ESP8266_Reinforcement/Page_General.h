@@ -2,7 +2,7 @@
 //  HTML PAGE
 //
 
-const char PAGE_AdminGeneralSettings[] PROGMEM =  R"=====(
+const char PAGE_AdminGeneralSettings[] PROGMEM = R"=====(
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <a href="admin.html"  class="btn btn--s"><</a>&nbsp;&nbsp;<strong>General Settings</strong>
@@ -69,50 +69,50 @@ function load(e,t,n){if("js"==t){var a=document.createElement("script");a.src=e,
 // Functions for this Page
 void send_devicename_value_html()
 {
-		
-	String values ="";
-	values += "devicename|" + (String) config.DeviceName + "|div\n";
-	server.send ( 200, "text/plain", values);
-	Serial.println(__FUNCTION__); 
-	
+
+    String values = "";
+    values += "devicename|" + (String)config.DeviceName + "|div\n";
+    server.send(200, "text/plain", values);
+    //Serial.println(__FUNCTION__);
+
 }
 
 void send_general_html()
 {
-	
-	if (server.args() > 0 )  // Save Settings
-	{
-		config.AutoTurnOn = false;
-		config.AutoTurnOff = false;
-		String temp = "";
-		for ( uint8_t i = 0; i < server.args(); i++ ) {
-			if (server.argName(i) == "devicename") config.DeviceName = urldecode(server.arg(i)); 
-			if (server.argName(i) == "tonenabled") config.AutoTurnOn = true; 
-			if (server.argName(i) == "toffenabled") config.AutoTurnOff = true; 
-			if (server.argName(i) == "tonhour") config.TurnOnHour =  server.arg(i).toInt(); 
-			if (server.argName(i) == "tonminute") config.TurnOnMinute =  server.arg(i).toInt(); 
-			if (server.argName(i) == "toffhour") config.TurnOffHour =  server.arg(i).toInt(); 
-			if (server.argName(i) == "toffminute") config.TurnOffMinute =  server.arg(i).toInt(); 
-		}
-		WriteConfig();
-		firstStart = true;
-	}
-	server.send ( 200, "text/html", PAGE_AdminGeneralSettings ); 
-	Serial.println(__FUNCTION__); 
-	
-	
+
+    if (server.args() > 0)  // Save Settings
+    {
+        config.AutoTurnOn = false;
+        config.AutoTurnOff = false;
+        String temp = "";
+        for (uint8_t i = 0; i < server.args(); i++) {
+            if (server.argName(i) == "devicename") config.DeviceName = urldecode(server.arg(i));
+            if (server.argName(i) == "tonenabled") config.AutoTurnOn = true;
+            if (server.argName(i) == "toffenabled") config.AutoTurnOff = true;
+            if (server.argName(i) == "tonhour") config.TurnOnHour = server.arg(i).toInt();
+            if (server.argName(i) == "tonminute") config.TurnOnMinute = server.arg(i).toInt();
+            if (server.argName(i) == "toffhour") config.TurnOffHour = server.arg(i).toInt();
+            if (server.argName(i) == "toffminute") config.TurnOffMinute = server.arg(i).toInt();
+        }
+        WriteConfig();
+        firstStart = true;
+    }
+    server.send(200, "text/html", PAGE_AdminGeneralSettings);
+    //Serial.println(__FUNCTION__);
+
+
 }
 
 void send_general_configuration_values_html()
 {
-	String values ="";
-	values += "devicename|" +  (String)  config.DeviceName +  "|input\n";
-	values += "tonhour|" +  (String)  config.TurnOnHour +  "|input\n";
-	values += "tonminute|" +   (String) config.TurnOnMinute +  "|input\n";
-	values += "toffhour|" +  (String)  config.TurnOffHour +  "|input\n";
-	values += "toffminute|" +   (String)  config.TurnOffMinute +  "|input\n";
-	values += "toffenabled|" +  (String) (config.AutoTurnOff ? "checked" : "") + "|chk\n";
-	values += "tonenabled|" +  (String) (config.AutoTurnOn ? "checked" : "") + "|chk\n";
-	server.send ( 200, "text/plain", values);
-	Serial.println(__FUNCTION__); 
+    String values = "";
+    values += "devicename|" + (String)config.DeviceName + "|input\n";
+    values += "tonhour|" + (String)config.TurnOnHour + "|input\n";
+    values += "tonminute|" + (String)config.TurnOnMinute + "|input\n";
+    values += "toffhour|" + (String)config.TurnOffHour + "|input\n";
+    values += "toffminute|" + (String)config.TurnOffMinute + "|input\n";
+    values += "toffenabled|" + (String)(config.AutoTurnOff ? "checked" : "") + "|chk\n";
+    values += "tonenabled|" + (String)(config.AutoTurnOn ? "checked" : "") + "|chk\n";
+    server.send(200, "text/plain", values);
+    //Serial.println(__FUNCTION__);
 }

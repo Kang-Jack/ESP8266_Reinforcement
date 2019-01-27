@@ -33,23 +33,23 @@ const char PAGE_example[] PROGMEM = R"=====(
 
 
 void filldynamicdata()
-{        
-    String values ="";
-    values += "mydynamicdata|" + (String) + "This is filled by AJAX. Millis since start: " + (String) millis() + "|div\n";   // Build a string, like this:  ID|VALUE|TYPE
-    server.send ( 200, "text/plain", values);   
+{
+    String values = "";
+    values += "mydynamicdata|" + (String)+"This is filled by AJAX. Millis since start: " + (String)millis() + "|div\n";   // Build a string, like this:  ID|VALUE|TYPE
+    server.send(200, "text/plain", values);
 }
 
 void processExample()
-{        
-    if (server.args() > 0 )  // Are there any POST/GET Fields ? 
+{
+    if (server.args() > 0)  // Are there any POST/GET Fields ? 
     {
-       for ( uint8_t i = 0; i < server.args(); i++ ) {  // Iterate through the fields
-            if (server.argName(i) == "firstname") 
+        for (uint8_t i = 0; i < server.args(); i++) {  // Iterate through the fields
+            if (server.argName(i) == "firstname")
             {
-                 // Your processing for the transmitted form-variable 
-                 String fName = server.arg(i);
+                // Your processing for the transmitted form-variable 
+                String fName = server.arg(i);
             }
         }
     }
-    server.send ( 200, "text/html", PAGE_example  ); 
+    server.send(200, "text/html", PAGE_example);
 }
